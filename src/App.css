@@ -1,38 +1,187 @@
-.App {
+
+[data-theme="dark"] {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --div-color: rgb(13, 255, 13);
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.Imput-And-Suggestions-Div {
+  padding: 5px 15px 9px 11px;
+  border-radius: 17px;
+  transition: background-color 0.3s;
+}
+
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  /* background-color: #fff; */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* color: rgb(var(--foreground-rgb)); */
+  color: var(--div-color);
+  position: relative; 
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  color: var(--div-color);
   text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+#suggestionDiv{
+  cursor: pointer;
+  margin: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  float: right;
   display: flex;
-  flex-direction: column;
+  position: relative;
+  left: 13px;
+  border-bottom: 1px solid #ccc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+input:focus-visible {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border-bottom: 1px solid #ccc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  /* background-color: #007BFF; */
+  /* color: #fff; */
+  color: var(--div-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#weatherInfo {
+  margin-top: 20px;
+  padding: 10px;
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+/* Weather animations */
+.weather-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+} */
+
+.Imput-And-Suggestions-Div {
+  padding: 5px 15px 9px 11px;
+  border-radius: 17px;
+}
+
+#themeToggle {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+#themeToggle i {
+  margin-left: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.theme-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    margin: 20px auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
   }
+
+}
+
+.anticon{
+  font-size: 22px;
+margin-left: 9px;
+}
+
+#locationButton{
+  width: 10%;
+  padding: 10px;
+  font-size: 16px;
+  /* background-color: #007BFF; */
+  /* color: #fff; */
+  color: var(--div-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 9px;
+}
+
+.input-container{
+  display: flex;
 }
