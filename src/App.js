@@ -114,6 +114,7 @@ function App() {
   };
 
   async function SearchSuggestion(event) {
+    
     try {
       const elements = document.getElementsByClassName('Imput-And-Suggestions-Div');
 
